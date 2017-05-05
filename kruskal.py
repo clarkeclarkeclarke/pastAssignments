@@ -22,10 +22,7 @@ class UFset:
         root2 = self.findset(element2)
         self.lst[root2] = root1
 
-#
-# This class implements an edge object, where an edge has two endpoint
-# vertices, v and w (both integers), and a weight.
-#
+
 class Edge:
     def __init__(self, v, w, weight):
         self.v = v
@@ -38,10 +35,7 @@ class Edge:
     def __str__(self):
         return "("+repr(self.v)+","+repr(self.w)+","+repr(self.weight)+")"
 
-# Your task is to implement this method by adapting the
-# pseudocode for Kruskal's algorithm found in the textbook.
-# Note that, unlike the pseudocode, your method must return
-# the list of edges in the MST.
+
 def kruskal_mst(edge_list, n):
     tree = []
     i = 1
@@ -50,14 +44,9 @@ def kruskal_mst(edge_list, n):
             print edge_list[i].v+' '+edge_list[i].w
             i = i + 1
             union(edge_list[i].v,edge_list[i].w)
-    # *** Your code goes here. ***
     return tree
 
-#
-# The main program builds two graphs and computes a minimal-weight
-# spanning tree for each.  Your task is to fill in the code for the
-# kruskal_mst method above.
-#
+
 print("-- Graph 1 --")
 edge_list = [Edge(0, 4, 1), Edge(0, 1, 3), Edge(1, 4, 4), Edge(4, 2, 6), Edge(4, 3, 7), Edge(2, 3, 2), Edge(1, 2, 5)]
 print("Edge list")
@@ -68,7 +57,7 @@ print("Tree edge list")
 print(tree_edge_list)
 for edge in tree_edge_list:
     tree_weight += edge.weight
-print("Tree weight:", tree_weight) # This should print a weight of 11.
+print("Tree weight:", tree_weight) 
 print()
 
 print("-- Graph 2 --")
